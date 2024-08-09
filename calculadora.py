@@ -46,13 +46,22 @@ tk.Entry(root,textvariable=entrada1).grid(row=0, column=1)
 
 tk.Label(root,text='segundo numero: ').grid(row=1, column=0)
 tk.Entry(root,textvariable=entrada2).grid(row=1, column=1)
+button_style = {
+    'font': ('Arial', 16),
+    'bg': "#4caf50",
+    'fg': '#ffffff',
+    "relief": "raised",
+    'bd': 3,
+    'width': 1,
+    'height': 1,
+}
 
-tk.Button(root,text='+', command=adicionar).grid(row=2, column=0)
-tk.Button(root,text='-', command=subitrair).grid(row=2, column=1)
-tk.Button(root,text='x', command=multiplicacao).grid(row=2, column=2)
-tk.Button(root,text=':', command=divisao).grid(row=2, column=3)
+tk.Button(root,text='+', command=adicionar, **button_style).grid(row=0, column=2)
+tk.Button(root,text='-', command=subitrair, **button_style).grid(row=0, column=3)
+tk.Button(root,text='x', command=multiplicacao, **button_style).grid(row=1, column=2)
+tk.Button(root,text=':', command=divisao, **button_style).grid(row=1, column=3)
 
-tk.Label(root, text='resultado: ').grid(row=3,column=0)
+tk.Label(root, text='resultado: ').grid(row=2,column=0)
 tk.Entry(root, textvariable=resultado, state='readonly').grid(row=3, column=1)
 
 root.mainloop()
